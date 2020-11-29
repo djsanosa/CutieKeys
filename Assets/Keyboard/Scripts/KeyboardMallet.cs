@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Valve.VR;
+//using Valve.VR;
 
 namespace Normal.UI {
     [RequireComponent(typeof(Rigidbody))]
     public class KeyboardMallet : MonoBehaviour {
-        [SerializeField]
-        private SteamVR_TrackedObject _trackedObject;
+
+        //[SerializeField]
+        //private SteamVR_TrackedObject _trackedObject;
 
         [SerializeField]
         private Transform _head;
@@ -29,14 +30,15 @@ namespace Normal.UI {
 
         // Watch for new poses event from SteamVR.
         void OnEnable() {
-            SteamVR_Events.NewPoses.Listen(OnNewPoses);
+            //SteamVR_Events.NewPoses.Listen(OnNewPoses);
         }
 
         void OnDisable() {
-            SteamVR_Events.NewPoses.Remove(OnNewPoses);
+            //SteamVR_Events.NewPoses.Remove(OnNewPoses);
         }
 
-        private void OnNewPoses(TrackedDevicePose_t[] poses) {
+        //private void OnNewPoses(TrackedDevicePose_t[] poses) {
+            /*
             if (_trackedObject.index == SteamVR_TrackedObject.EIndex.None)
                 return;
 
@@ -54,7 +56,8 @@ namespace Normal.UI {
             Vector3    worldPosition = _trackedObject.transform.parent.TransformPoint(pose.pos);
             Quaternion worldRotation = _trackedObject.transform.parent.rotation * pose.rot;
             PositionGeometry(worldPosition, worldRotation);
-        }
+            */
+        //}
 
         // Position this object at the center of the controller that we're tracking.
         void PositionGeometry(Vector3 position, Quaternion rotation) {
@@ -98,6 +101,7 @@ namespace Normal.UI {
         }
 
         IEnumerator HapticPulse() {
+            /*
             if (_trackedObject.index == SteamVR_TrackedObject.EIndex.None) {
                 yield break;
             }
@@ -109,6 +113,8 @@ namespace Normal.UI {
             yield return new WaitForEndOfFrame();
             device.TriggerHapticPulse(1500);
             yield return new WaitForEndOfFrame();
+            */
+            yield return null;
         }
     }
 }

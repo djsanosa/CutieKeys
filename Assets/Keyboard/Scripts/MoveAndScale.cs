@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
-using Valve.VR;
+//using Valve.VR;
 
 namespace Normal.UI {
     public class MoveAndScale : MonoBehaviour {
+
+        /*
         public SteamVR_TrackedObject  leftController;
         public SteamVR_TrackedObject rightController;
     
@@ -189,5 +191,6 @@ namespace Normal.UI {
 
             return centroid;
         }
+        */
     }
 }
